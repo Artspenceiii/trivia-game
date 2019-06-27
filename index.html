@@ -1,83 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Triva Game</title>
-	<!-- CSS Files -->
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>
-	<header id="masthead">
-		<div class="container">
-			<h1>The Riddler</h1>
-		</div>
-	</header>
-	<div id="main-container" class="container">
-		<section class="main-section">
-			<h1 class="rules">The Rules</h1>
-			<p class="rules">There are 5 questions, you have 50 seconds to answer all 5 questions.</p>
-			<h2>
-				<button type="button" id="start-button">Start</button>
-			</h2>
-			
-			<div id="show-number"></div>
-			<!-- question 1 -->
-			<p class="question">1. What is another name for Superman?</p>
-			<ul class="answers">
-			<input type="radio" name="q1" value="a" id="q1a"><label for="q1a">The Red Redeemer</label><br/>
-			<input type="radio" name="q1" value="b" id="q1b"><label for="q1b">The Masked Avenger</label><br/>
-			<input type="radio" name="q1" value="c" id="q1c"><label for="q1c">The Caped Crusader</label><br/>
-			<input type="radio" name="q1" value="d" id="q1d"><label for="q1d">The Man of Steel</label><br/>
-			</ul>
-			<!-- question 2 -->
-			<p class="question">2. What is Superman's only weakness?</p>
-			<ul class="answers">
-			<input type="radio" name="q2" value="a" id="q2a"><label for="q2a">Samsonite</label><br/>
-			<input type="radio" name="q2" value="b" id="q2b"><label for="q2b">Cosmonite</label><br/>
-			<input type="radio" name="q2" value="c" id="q2c"><label for="q2c">Kryptonite</label><br/>
-			<input type="radio" name="q2" value="d" id="q2d"><label for="q2d">Plutonite</label><br/>
-			</ul>
-			<!-- question 3 -->
-			<p class="question">3. What is the name of Batman's secret identity?</p>
-			<ul class="answers">
-			<input type="radio" name="q3" value="a" id="q3a"><label for="q3a">Bruce Devon</label><br/>
-			<input type="radio" name="q3" value="b" id="q3b"><label for="q3b">Bruce Wayne</label><br/>
-			<input type="radio" name="q3" value="c" id="q3c"><label for="q3c">Bruce Davis</label><br/>
-			<input type="radio" name="q3" value="d" id="q3d"><label for="q3d">The Dark Knight</label><br/>
-			</ul>
-			<!-- question 4 -->
-			<p class="question">4. Batman protects what city?</p>
-			<ul class="answers">
-			<input type="radio" name="q4" value="a" id="q4a"><label for="q4a">Chicago</label><br/>
-			<input type="radio" name="q4" value="b" id="q4b"><label for="q4b">Metropolis</label><br/>
-			<input type="radio" name="q4" value="c" id="q4c"><label for="q4c">Gotham City</label><br/>
-			<input type="radio" name="q4" value="d" id="q4d"><label for="q4d">New York City</label><br/>
-			</ul>
-			<!-- question 5 -->
-			<p class="question">5. This superhero's super tools included bullet-proof bracelets and a magic lasso. Who is she?</p>
-			<ul class="answers">
-			<input type="radio" name="q5" value="a" id="q5a"><label for="q5a">Wonder Woman</label><br/>
-			<input type="radio" name="q5" value="b" id="q5b"><label for="q5b">Super Girl</label><br/>
-			<input type="radio" name="q5" value="c" id="q5c"><label for="q5c">Catwoman</label><br/>
-			<input type="radio" name="q5" value="d" id="q5d"><label for="q5d">Elastigirl</label><br/>
-			</ul>
-			
-			<button type="button" id="submit">Submit Final Answers</button>
-			
-			<div id="results">
-			Show me the answers!
-				
-			</div>
-			<button type="button" id="restart">Play Again</button>
-		</section>
-	</div>
-	<footer id="footer" class="site-footer"></footer>
-	
-	<script
+    <meta charset="UTF-8">
+    <title>Trivia Game!</title>
+    <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
-	<script type="text/javascript" src="assets/javascript/trivia.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<header>
+    <h1>The Riddler</h1>
+    <h4>Riddle me this, riddle me that...</h4>
+</header>
+<br>
+
+<body>
+    <div id="container">
+        <div id=start>
+            <button id="play">Play!!</button>
+        </div>
+        <br>
+        <div id=timer>You have <span id="countdown">25</span> seconds!!</div>
+        <br>
+        <div id="quiz">
+            <div id="question">
+                <form>
+                    <label>What is another name for Superman?</label>
+                    <br>
+                    <input type="radio" id="radio" name="answer1" value="The Red Redeemer"> The Red Redeemer
+                    <br>
+                    <input type="radio" id="radio" name="answer1" value="The Masked Avenger"> The Masked Avenger
+                    <br>
+                    <input type="radio" id="radio" name="answer1" value="The Caped Crusader"> The Caped Crusader
+                    <br>
+                    <input type="radio" id="radio" name="answer1" value="The Man of Steel"> The Man of Steel
+                    <br>
+                    <br>
+                    <label>What is Superman's only weakness?</label>
+                    <br>
+                    <input type="radio" id="radio" name="answer2" value="Samsonite"> Samsonite
+                    <br>
+                    <input type="radio" id="radio" name="answer2" value="Cosmonite"> Cosmonite
+                    <br>
+                    <input type="radio" id="radio" name="answer2" value="Kryptonite"> Kryptonite
+                    <br>
+                    <input type="radio" id="radio" name="answer2" value="Plutonite"> Plutonite
+                    <br>
+                    <br>
+                    <label>What is the name of Batman's secret identity?</label>
+                    <br>
+                    <input type="radio" id="radio" name="answer3" value="Bruce Devon"> Bruce Devon
+                    <br>
+                    <input type="radio" id="radio" name="answer3" value="Bruce Wayne"> Bruce Wayne
+                    <br>
+                    <input type="radio" id="radio" name="answer3" value="Bruce Davis"> Bruce Davis
+                    <br>
+                    <input type="radio" id="radio" name="answer3" value="The Dark Knight"> The Dark Knight
+                    <br>
+                    <br>
+                    <label>Batman protects what city?</label>
+                    <br>
+                    <input type="radio" id="radio" name="answer4" value="Chicago"> Chicago
+                    <br>
+                    <input type="radio" id="radio" name="answer4" value="Metropolis"> Metropolis
+                    <br>
+                    <input type="radio" id="radio" name="answer4" value="Gotham City"> Gotham City
+                    <br>
+                    <input type="radio" id="radio" name="answer4" value="New York City"> New York City
+                    <br>
+                    <br>
+                    <label>This superhero's super tools included bullet-proof bracelets and a magic lasso. Who is she?</label>
+                    <br>
+                    <input type="radio" id="radio" name="answer5" value="Wonder Woman"> Wonder Woman
+                    <br>
+                    <input type="radio" id="radio" name="answer5" value="Super Girl"> Super Girl
+                    <br>
+                    <input type="radio" id="radio" name="answer5" value="Catwoman"> Catwoman
+                    <br>
+                    <input type="radio" id="radio" name="answer5" value="Elastigirl"> Elastigirl
+                    <br>
+                </form>
+                <br>
+            </div>
+            <button id="done">Finished!</button>
+        </div>
+        <div id=results>
+            <h1>RESULTS</h1>
+            <p>Correct: <span id=correct>0</span></p>
+            <p>Incorrect: <span id=incorrect>0</span></p>
+            <p>Missed: <span id=blank>0</span></p>
+            <button id="restart">Try Again?!</button>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/trivia.js"></script>
 </body>
+
 </html>

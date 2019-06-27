@@ -1,15 +1,12 @@
 $(document).ready(function(){
     $("#start-button").click(function(){
-  // ----------------------------------------------------------------
-   // declaring the value for the timer to 60 seconds
-   // hide the start button and rules
+ 
         var number = 50;
-        alert("The let game begin!");
+        alert("Riddle Me This");
       $("#start-button").on("click", start);  // starts the games 
       $("#submit").on("click", finish);  // submits answers and finishes the game
       $("#restart").on("click", restart);  // restarts the games 
-  // ----------------------------------------------------------------
-  // functions
+  
       function start(){
           counter = setInterval(timer, 1000);
           showMe(".question");
